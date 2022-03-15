@@ -20,6 +20,11 @@ function TodoItem(props) {
   const handleComplete = (event) => {
     setIsComplete(!isComplete);
   };
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      setUpdate(false);
+    }
+  };
   return (
     <div
       className="todo-item-wrap"
@@ -28,9 +33,13 @@ function TodoItem(props) {
       }}
     >
       {update === true ? (
-        <input value={value} onChange={handleChange}></input>
+        <input
+          value={value}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+        ></input>
       ) : (
-        <h1>{props.content}</h1>
+        <h1>{value}</h1>
       )}
       <button onClick={handleDelete}>delete</button>
       <button onClick={handleUpdate}>update</button>
