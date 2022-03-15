@@ -1,0 +1,11 @@
+.todo-item-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+.todo-item-wrap button {
+  margin: 10px;
+  height: 20%;
+  color: blue;
+}
